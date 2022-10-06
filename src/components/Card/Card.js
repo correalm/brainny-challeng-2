@@ -1,13 +1,20 @@
 import './Card.scss'
+import { useClientsContext } from '../../context/ClientsContext';
 import trash from '../../assets/trash.svg'
 import edit_icon from '../../assets/edit_icon.svg'
 
 const Card = ({data}) => {
 
+  const { setClients, clients } = useClientsContext()
+
+  const removeClient = (id) => {
+    setClients(clients.filter(client => client.id !== id))
+  }
+
   return (
       <div className="card">
         <section className='card-controls'>
-          <img src={ trash } alt='trash-icon' />
+          <img onClick={() => removeClient(data.id)} src={ trash } alt='trash-icon' />
           <img src={ edit_icon } alt='edit-icon' />
         </section>
         <section className='card-content'>

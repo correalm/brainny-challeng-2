@@ -4,7 +4,6 @@
   bottom: 0;
   width: 280px;
   top: 90px;
-  // border: 1px solid red;
   box-shadow: 3px 0px 19px rgba(0, 0, 0, 0.15);
   .content {
     display: flex;
@@ -30,5 +29,14 @@
     }
   }
 
-  
+  @media screen and (max-width: 630px) {
+    display: none;
+    &-open {
+      display: block;
+      background-color: #fff;
+    }
+    .fill {
+      display: block;
+    }
+  }
 }

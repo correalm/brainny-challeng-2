@@ -3,7 +3,10 @@ import "./Header.scss"
 
 const openMenu = () => {
   const sidebar = document.getElementsByClassName("sidebar")[0]
+  const fill = document.getElementsByClassName("fill-menu")[0]
+
   sidebar.classList.toggle("sidebar-open")
+  fill.classList.toggle("fill-menu-open")
 }
 
 const Header = () => (

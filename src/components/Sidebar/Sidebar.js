@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './Sidebar.scss'
 import SidebarOption from './SidebarOption/SidebarOption'
 import arrow from '../../assets/arrow.svg'
@@ -11,7 +11,7 @@ import  workers_avatar_selected from '../../assets/workers_avatar_selected.svg'
 
 
 const Sidebar = () => {
-  const [selected, setSelected] = useState({})
+  const [selected, setSelected] = useState({id: '2'})
 
   const toggleSelected = (id) => {
     const selecteds = Array.from(document.getElementsByClassName('option option-selected'))
@@ -22,7 +22,7 @@ const Sidebar = () => {
     option.classList.toggle('option-selected')
     setSelected({id: id})
   }
-  
+
   return (
     <>
       <div className="sidebar">
