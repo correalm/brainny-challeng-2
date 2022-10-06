@@ -1,4 +1,5 @@
 import { faker } from '@faker-js/faker/locale/pt_BR'
+import { getClientFirstAndLastName } from './getClientFirstAndLastName'
 
 const translateGenre = (sex) => {
   if (sex === 'Feminino') {
@@ -13,14 +14,16 @@ export const buildRecords = (times, objOnly = false) => {
 
   for (let i = 0; i < times ; i++) {
     const genre = faker.name.sex()
+    const name =  faker.name.fullName({
+      sex: translateGenre(genre)
+    })
+    const { first_name, last_name } = getClientFirstAndLastName(name)
     const record  = {
-      name: faker.name.fullName({
-        sex: translateGenre(genre)
-      }),
+      name: name,
       id: faker.datatype.uuid(),
-      email: faker.internet.email,
+      email: faker.internet.email(first_name, last_name),
       genre: genre,
-      phone: faker.phone.number('(53) 9 ####.####')
+      phone_number: faker.phone.number('(53) 9 ####.####')
     }
 
     if (objOnly) return record

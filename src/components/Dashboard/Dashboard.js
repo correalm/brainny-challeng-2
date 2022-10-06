@@ -1,10 +1,9 @@
 import React from 'react'
-import Sidebar from '../Sidebar/Sidebar'
 import { buildRecords } from '../../utils/buildRecords';
 import './Dashboard.scss'
+import Card from '../Card/Card';
 
-const data = buildRecords(20)
-console.log(data)
+const clients = buildRecords(10)
 
 
 const Dashboard = () => {
@@ -12,13 +11,14 @@ const Dashboard = () => {
   return (
     <>
       <div className="dashboard">
-        <Sidebar />
         <div className='content-dashboard'>
           <section className='content-controllers'>
             <h3>Lista de clientes</h3>
-            <p>20 clientes cadastrados</p>
+            { clients && <p>{clients.length} clientes cadastrados</p> }
           </section>
-          <section className='content-main'>TODO</section>
+          <div className='content-main'>
+            { clients && clients.map(client => <Card data={client} key={client.id} />)}
+          </div>
         </div>
       </div> 
     </>
