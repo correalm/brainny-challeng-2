@@ -1,200 +1,34 @@
 .sidebar {
-  background-color: #363e48;
-  height: 100%;
-  position: relative;
-  z-index: 10;
-  flex-direction: column;
-  transition: .3s ease-out;
+  position: fixed;
+  left: 0;
+  bottom: 0;
   width: 280px;
-
-  .sidebar-title {
-    justify-content: center;
-    h1 {
-      display: flex;
-      color: #ffff;
-      align-items: center;
-      margin: 28px 28px auto;
-      font-size: 32px;
-      font-weight: bold;
-
-      img {
-        width: 135px;
-        margin: 10px 5px 0 0;
-      }
-
-      .tankLogo {
-        width: 40px;
-        margin: 5px;
-      }
-    }
-  }
-
-  .sidebar-options {
+  top: 90px;
+  // border: 1px solid red;
+  box-shadow: 3px 0px 19px rgba(0, 0, 0, 0.15);
+  .content {
     display: flex;
     flex-direction: column;
+    width: 100%;
     height: 100%;
 
-    .section-title {
-      display: flex;
-      width: 100%;
-      border-left: 8px solid #798aa4a8;
+    &-options {
+      padding-top: 44px;
     }
 
-    .selected_section {
-      background-color: #415164;
-    }
-
-    .sidebar_footer {
-      display: flex;
-      height: 100%;
-      align-items: flex-end;
-      font-size: 16px;
-
-      .user_panel-link {
-        display: flex;
-        width: 100%;
-        background-color: #20252b;
-        border-left: 8px solid #798aa4a8;
-        border-top: 2px solid #b3c249;
-        cursor: pointer;
-
-        a {
-          text-decoration: none;
-        }
-      }
-
-      .user_panel-link-selected {
-        display: flex;
-        width: 100%;
-        background-color: #415164;
-        border-left: 8px solid #798aa4a8;
-        border-top: 2px solid #b3c249;
-
-        a {
-          text-decoration: none;
-        }
-      }
-    }
-
-    .options-title {
+    &-footer {
+      height: 50px;
+      background-color: #5D5FEF;
       display: flex;
       align-items: center;
-      font-size: 16px;
-      width: 100%;
-      margin: 10px 20px;
-      font-weight: bold;
-      color: #fff;
-      overflow: hidden;
-      .user-name {
-        height: 20px;
-      }
-      i {
-        color: #c8ced8;
-        margin-right: 5px;
-        width: 20px;
-      }
-    }
-
-    .logout-container {
-      display: flex;
-      align-items: center;
+      padding: 13px;
+      justify-content: center;
+      align-self: end;
       &:hover {
         cursor: pointer;
       }
-
-      .logout-icon {
-        color: #fff;
-        margin-right: 5px;
-      }
-    }
-
-    .options-label {
-      display: flex;
-      height: 42px;
-      width: 100%;
-      align-items: flex-end;
-      font-size: 13px;
-      font-weight: bold;
-      color: #c8ced8;
-      border-bottom: 2px solid #b3c249;
-      p {
-        margin: 5px 25px;
-        text-transform: uppercase;
-      }
-    }
-
-    .options-subtitle {
-      width: 100%;
-      height: 24px;
-      align-items: center;
-      color: #c8ced8;
-      background-color: transparent;
-      border: transparent;
-      display: flex;
-      margin: 0px 15px;
-      font-size: 16px;
-      font-weight: bold;
-      text-decoration: none;
-    }
-
-    .selected {
-      border-left: 8px solid #798aa4a8;
-    }
-
-    .selected:hover {
-      transition: 0.3s;
-      background-color: #c8ced8;
-      border-left: 8px solid #798aa4a8;
-      a {
-        color: #556476;
-      }
-    }
-
-    .selected_link {
-      transition: 0.3s;
-      background-color: #c8ced8;
-      border-left: 8px solid #798aa4a8;
-      a {
-        color: #556476;
-      }
     }
   }
 
-  .fillMenu {
-    display: none;
-  }
-}
-
-@media only screen and (max-width: 885px) {
- .sidebar {
-   display: none;
-    &-open{
-      display: block;
-      position: fixed;
-      width: 70%;
-      height: 100%;
-      .sidebar-title {
-        display: none;
-      }
-      .options-label {
-        display: none;
-      }
-    }
-    .sidebar-options{
-      .selected_section{
-        padding-top: 44px;
-      }
-      .options-subtitle{
-        width: fit-content;
-      }
-    }
-    .fillMenu {
-      display: block;
-      position: fixed;
-      left: 70%;
-      height: 100%;
-      width: 100%;
-      background-color: rgba(0,0,0,0.5);
-    }
- }
+  
 }
