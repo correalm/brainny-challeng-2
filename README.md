@@ -1,3 +1,6 @@
+# Deploy
+https://brainny-challeng-2.vercel.app/
+
 # Requiriments
 - Node 16.14.0
 - React 18.2.0
